@@ -19,7 +19,7 @@ const off = 900;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100vh",
+    width: "100%",
     height: "100vh",
     display: "flex",
     flexDirection: "column",
@@ -134,7 +134,11 @@ export default () => {
 
   return (
     <Container className={classes.root} maxWidth="xs">
-      <Grid container style={{ position: "relative" }} spacing={2}>
+      <Grid
+        container
+        style={{ position: "relative", maxWidth: "100%" }}
+        spacing={2}
+      >
         {game.constants.notes.map((note) => (
           <Grid key={note} xs={6} item>
             <GameButton note={note} />
