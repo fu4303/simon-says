@@ -16,6 +16,7 @@
     "tone": "^14.7.38"
   },
   "scripts": {
+    "deploy": "npm run build && firebase deploy",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
