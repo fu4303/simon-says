@@ -80,6 +80,8 @@ function* game() {
 }
 
 function* saga() {
+  yield call(() => Tone.loaded());
+
   while (true) {
     yield race([
       call(game),
