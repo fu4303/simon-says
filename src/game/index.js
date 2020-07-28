@@ -59,9 +59,9 @@ function* game() {
     for (const note of song) {
       yield put(actions.setLights({ [note]: true }));
       sampler.triggerAttackRelease(noteToNote[note]);
-      yield delay(800);
+      yield delay(500);
       yield put(actions.setLights({ [note]: false }));
-      yield delay(200);
+      yield delay(100);
     }
 
     yield put(actions.setStatus("listening"));
