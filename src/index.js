@@ -1,28 +1,18 @@
+import { createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
-import * as serviceWorker from "./serviceWorker";
-import { configureStore } from "@reduxjs/toolkit";
-
-import { ThemeProvider, createMuiTheme, CssBaseline } from "@material-ui/core";
-import createSagaMiddleware from "redux-saga";
 import { Provider } from "react-redux";
-import game from "./game";
+import App from "./App";
+import configureStore from "./configureStore";
+import * as serviceWorker from "./serviceWorker";
+
 const theme = createMuiTheme({
   palette: {
     type: "dark",
   },
 });
 
-const sagaMiddleware = createSagaMiddleware();
-
-const store = configureStore({
-  reducer: game.reducer,
-
-  middleware: [sagaMiddleware],
-});
-
-sagaMiddleware.run(game.saga);
+const store = configureStore();
 
 ReactDOM.render(
   <React.StrictMode>
