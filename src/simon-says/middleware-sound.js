@@ -16,9 +16,7 @@ export const soundMiddleware = ({ dispatch }) => {
     },
     baseUrl: "https://tonejs.github.io/audio/salamander/",
     onload: () => {
-      setTimeout(() => {
-        dispatch(soundActions.loaded());
-      }, 2000);
+      dispatch(soundActions.loaded());
     },
   }).toDestination();
 
