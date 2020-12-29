@@ -20,9 +20,7 @@ export const soundMiddleware = ({ dispatch }) => {
         dispatch(soundActions.loaded());
       }, 2000);
     },
-  });
-
-  sampler.toMaster();
+  }).toDestination();
 
   return (next) => (action) => {
     next(action);
