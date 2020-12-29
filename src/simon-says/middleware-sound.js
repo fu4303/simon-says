@@ -1,5 +1,5 @@
 import { createAction } from "@reduxjs/toolkit";
-import * as Tone from "tone";
+import { Sampler } from "tone";
 
 export const soundActions = {
   loaded: createAction("[sound] LOADED"),
@@ -7,7 +7,7 @@ export const soundActions = {
 };
 
 export const soundMiddleware = ({ dispatch }) => {
-  const sampler = new Tone.Sampler({
+  const sampler = new Sampler({
     urls: {
       C4: "C4.mp3",
       "D#4": "Ds4.mp3",
@@ -18,7 +18,9 @@ export const soundMiddleware = ({ dispatch }) => {
     onload: () => {
       dispatch(soundActions.loaded());
     },
-  }).toDestination();
+  });
+
+  sampler.toMaster();
 
   return (next) => (action) => {
     next(action);

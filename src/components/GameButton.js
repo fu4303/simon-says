@@ -15,18 +15,22 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "100%",
     borderRadius: theme.spacing(2),
 
-    "&:hover:enabled, &:active:enabled": {
-      transform: "scale(1.025)",
-      filter: "brightness(50%)",
+    [theme.breakpoints.up("md")]: {
+      "&:hover:enabled": {
+        transform: "scale(1.025)",
+        filter: "brightness(50%)",
+      },
     },
-
     "&:active:enabled": {
       transform: "scale(1.05)",
       filter: "brightness(125%)",
+      opacity: 1,
     },
+    opacity: ({ isOn }) => (isOn ? 1 : 0.75),
     transform: ({ isOn }) => (isOn ? "scale(1.05)" : "scale(1)"),
     filter: ({ isOn }) => (isOn ? "brightness(125%)" : "brightness(75%)"),
   },
+
   red: {
     background: makeGradient(red),
   },

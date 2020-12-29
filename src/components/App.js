@@ -1,29 +1,37 @@
-import { makeStyles } from "@material-ui/core";
+import {
+  AppBar,
+  Container,
+  Toolbar,
+  Typography,
+  makeStyles,
+  Box,
+} from "@material-ui/core";
 import React from "react";
 import { Game } from "./Game";
 import { LoadingBackdrop } from "./LoadingBackdrop";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    position: "relative",
-    width: "100vw",
-    height: "80vh",
-    margin: "auto",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: theme.spacing(2),
-  },
+  appBarGutter: theme.mixins.toolbar,
 }));
 
 export const App = () => {
   const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <Game />
+    <React.Fragment>
+      {/* <AppBar color="default">
+        <Container maxWidth="md">
+          <Toolbar>
+            <Typography variant="h6">Simon Says</Typography>
+          </Toolbar>
+        </Container>
+      </AppBar> */}
+      <div className={classes.appBarGutter} />
+      <Box paddingY={4}>
+        <Container maxWidth="xs">
+          <Game />
+        </Container>
+      </Box>
       <LoadingBackdrop />
-    </div>
+    </React.Fragment>
   );
 };

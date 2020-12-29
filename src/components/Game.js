@@ -7,8 +7,8 @@ import { GameControls } from "./GameControls";
 const { NOTES } = constants;
 
 const useStyles = makeStyles((theme) => ({
-  grid: {
-    maxWidth: theme.breakpoints.values.sm,
+  root: {
+    position: "relative",
   },
 }));
 
@@ -16,7 +16,7 @@ export const Game = () => {
   const classes = useStyles();
 
   return (
-    <Grid className={classes.grid} container spacing={2}>
+    <Grid className={classes.root} container spacing={2}>
       {NOTES.map((note) => (
         <Grid key={note} item xs={6}>
           <GameButton note={note} />
