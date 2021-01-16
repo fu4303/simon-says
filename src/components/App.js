@@ -34,7 +34,7 @@ const AttributionButton = () => {
   );
 };
 
-const SOURCE_CODE_URL = "https://simon-says-game.web.app/";
+const SOURCE_CODE_URL = "https://github.com/crvouga/simon-says";
 
 const SourceCodeButton = (props) => {
   return (
