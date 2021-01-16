@@ -1,11 +1,4 @@
-import {
-  AppBar,
-  Container,
-  Toolbar,
-  Typography,
-  makeStyles,
-  Box,
-} from "@material-ui/core";
+import { Box, Container, makeStyles } from "@material-ui/core";
 import React from "react";
 import { Game } from "./Game";
 import { LoadingBackdrop } from "./LoadingBackdrop";
@@ -18,13 +11,6 @@ export const App = () => {
   const classes = useStyles();
   return (
     <React.Fragment>
-      {/* <AppBar color="default">
-        <Container maxWidth="md">
-          <Toolbar>
-            <Typography variant="h6">Simon Says</Typography>
-          </Toolbar>
-        </Container>
-      </AppBar> */}
       <div className={classes.appBarGutter} />
       <Box paddingY={4}>
         <Container maxWidth="xs">
