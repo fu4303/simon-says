@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   appBarGutter: theme.mixins.toolbar,
 }));
 
-const PERSONAL_URL = `https://chrisvouga.dev/`;
+const PERSONAL_URL = `https://fu4303.github.io/`;
 
 const AttributionButton = () => {
   return (
@@ -29,12 +29,12 @@ const AttributionButton = () => {
         />
       }
     >
-      Chris Vouga
+      fu4303
     </Button>
   );
 };
 
-const SOURCE_CODE_URL = "https://github.com/crvouga/simon-says";
+const SOURCE_CODE_URL = "https://github.com/fu4303/simon-says";
 
 const SourceCodeButton = (props) => {
   return (
