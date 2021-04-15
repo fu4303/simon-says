@@ -26,8 +26,8 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     backgroundColor: theme.palette.background.default,
     borderRadius: "50%",
-    width: "144px",
-    height: "144px",
+    width: "200px",
+    height: "200px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
