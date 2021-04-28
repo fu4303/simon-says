@@ -1,0 +1,21 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: react-redux
+    versions:
+    - 7.2.3
+  - dependency-name: "@material-ui/core"
+    versions:
+    - 4.11.3
+  - dependency-name: acorn
+    versions:
+    - 5.7.4
+  - dependency-name: react
+    versions:
+    - 16.14.0
